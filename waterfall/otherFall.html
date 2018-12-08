@@ -134,12 +134,6 @@
                     // var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                     // var  scrollTop=this.getScrollTop();
                     var windowH = $(window).height();//页面高度
-                    // let curH = window.innerHeight + scrollTop;
-                    // let docH = Math.max(document.documentElement.clientHeight, document.body.clientHeight);
-                    console.log("页面高度:"+windowH);
-                    console.log("滚动高度:"+scrollTop);
-                    console.log("图片高度:"+lastPinH);
-                    //console.log("lastPinH=" + lastPinH +",   scrollTop="+scrollTop +"--- windowH:"+windowH+"  >>> "+ (lastPinH - scrollTop -windowH ) );
                     if( lastPinH <= scrollTop +windowH+100 ){//到达指定高度后 返回true，触发waterfall()函数
                         this.logTime = curTime;//更新时间标记
 

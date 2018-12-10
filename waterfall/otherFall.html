@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优化瀑布流</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style>
+        html,body,p{margin:0;padding:0;}
+        body{background:#e8e8e8;font-size:16px}
+        html{
+            font-size: 62.5%;
+        }
+        #imgList{position:relative;width:100%;overflow:auto;}
+        #imgList > .hide{display:none;}/*初始化时 .pin 会被js设为隐藏*/
+        #imgList > .l{float:left;padding:10px 5px 0 10px;}/*左列*/
+        #imgList > .r{float:right;padding:10px 10px 0 5px;}/*右列*/
+
+        #imgList .pin{position:relative;width:50%;padding:10px 5px 0 10px;box-sizing: border-box;margin:0;}
+        #imgList .box{display:block;background:#fff;padding:0;box-sizing:border-box;}
+        #imgList .box > img{width:100%;height:auto;}
+        #imgList .box > p{padding:14px 6px 14px 6px;font-size:14px;text-align:left;color:#333;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+    </style>
+</head>
+<body>
+<div id="imgList">
+    <div class="pin"><a class="box"><img src="./img/01.jpg" data-src="./img/01.jpg"><p>dddddddddddd</p></a></div>
+    <div class="pin"><a class="box"><img src="./img/02.jpg" data-src="./img/02.jpg"><p>eeeeeeeeeeee</p></a></div>
+    <div class="pin"><a class="box"><img src="./img/03.jpg" data-src="./img/03.jpg"><p>gggggg</p></a></div>
+    <div class="pin"><a class="box"><img src="./img/04.jpg" data-src="./img/04.jpg"><p>hhhhhhhhh</p></a></div>
+    <div class="pin"><a class="box"><img src="./img/05.jpg" data-src="./img/05.jpg"><p>iiiiiiiii</p></a></div>
+    <div class="pin"><a class="box"><img src="./img/06.jpg" data-src="./img/06.jpg"><p>jjjjjjjjj</p></a></div>
+    <div class="pin"><a class="box"><img src="./img/07.jpg" data-src="./img/07.jpg"><p>kkkkkkkkkk</p></a></div>
+    <div class="pin"><a class="box"><img src="./img/08.jpg" data-src="./img/08.jpg"><p>lllll</p></a></div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        /***
+         【两列图片瀑布流(图片高度未知)】
+         firstCounter:5,//设置：第一次加载几张
+         limit:3,//设置每次加载几张
+         cur:0,//当前第几张
+         init()方法：初始化，将所有容器设为隐藏+左浮动
+         loadimg()方法：给每个图片加onload事件，图片载入后，触发
+         waterfall()方法: 对瀑布流排序和定位（容器中如果图片未载入完毕的，依旧隐藏。）
+         checkscroll()方法: 滚动检测
+         logTime变量:    两次滚动加载请求之间时间需大于500毫秒，避免高频率请求
+         scroll()方法: 发生滚动后，调用次方法
+         */
+        var WATERFALL = {
+            oParent: "",// 父级对象名
+            aPin: "",// 存储块框pin的类名
+            logTime:0,//最后一次滚屏操作
+            Timer:null,//图片载入后，加延迟定时器
+            firstCounter:8,//设置：第一次加载几张
+            limit:3,//设置每次加载几张
+            cur:0,//当前第几张
+            init:function(parent,pin) {//初始化
+                this.oParent = parent;    //parend 父级id
+                this.aPin = pin;        //pin 容器
+                $(this.aPin).addClass("hide").addClass("l");//初始化：先将所有容器设为隐藏+左浮动。
+                this.loadimg(0,this.firstCounter);//第一次载入的图片
+            },
+            loadimg:function(_start,_end) {
+                if(_end > $(this.aPin).length){_end = $(this.aPin).length;}//去掉超出总数的不合理数据
+                this.cur = _end;
+                for(var i=_start;i<_end;i++){
+                    var _aPin = $(this.aPin).eq(i);
+                    var _img = _aPin.find("img");
+                    _img.attr("src",_img.attr("data-src"));
+                    //图片load事件
+                    _img.bind("load",function(){
+                        var _aPin = $(this).parents( WATERFALL.aPin );//容器
+                        _aPin.removeClass("hide");//图片已载入后，显示容器
+                        //定时器(100毫秒后如无新图载入，计算位置；有新图载入，刷新定时器)——避免频繁重复操纵页面
+                        clearTimeout(WATERFALL.Timer);
+                        WATERFALL.Timer = setTimeout(function(){
+                            WATERFALL.waterfall();
+                        }, 100);//100毫秒
+
+                    });
+                }
+            },
+
+            waterfall:function() {
+                // console.log("waterfall (图片排序)----!!");
+                //左右列的当前累计总高度（不包含当前容器高）
+                var _sumH1=0;
+                var _sumH2=0;
+                $(this.aPin).eq(0).addClass("l");
+
+                for(var i=0;i<$(this.aPin).length;i++){//遍历数组aPin的每个块框元素
+                    var _aPin = $(this.aPin).eq(i);
+                    if(_aPin.hasClass("hide")==false){//判断是否该容器的图片已载入
+                        var _sumH = _aPin.position().top + _aPin.height();//当前容器相对于父元素的偏移 + 当前元素高（为下一次循环准备数据）
+                        //_aPin.attr("data-sum1",_sumH1);
+                        //_aPin.attr("data-sum2",_sumH2);
+                        //_aPin.attr("data-h",_aPin.height());
+                        if(i==0){
+                            _sumH1 = _sumH;
+                        }else{
+                            if(_sumH2>_sumH1){
+                                _aPin.removeClass("r").addClass("l");//左列
+                                _sumH1  = _sumH;
+                            }else{
+                                _aPin.removeClass("l").addClass("r");//右列
+                                _sumH2  = _sumH;
+                            }
+                        }
+                    }
+                }
+            },
+
+            checkscroll:function() {
+                //两次滚动请求之间时间需大于500毫秒，避免多次请求
+                var curTime=new Date().getTime();
+                if(this.logTime > (curTime-500) ){
+                    return false;
+                }else{
+                    var oParent = $(this.oParent);
+                    var aPin = $(this.aPin);
+                    if(aPin.length==0){return false;}//空数据不作处理
+                    var aPinLast = aPin.eq(this.cur-1);//最后一个显示的容器
+                    var lastPinH =  aPinLast.offset().top + aPinLast.height()-10;//到最后一个容器的高度时，载入下一次
+                    // var scrollTop = $(document.body).scrollTop();//滚动高度
+                    var scrollTop = $(window).scrollTop();//滚动高度
+                    // let scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+                    // var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    // var  scrollTop=this.getScrollTop();
+                    var windowH = $(window).height();//页面高度
+                    if( lastPinH <= scrollTop +windowH+100 ){//到达指定高度后 返回true，触发waterfall()函数
+                        this.logTime = curTime;//更新时间标记
+                        if(this.cur >= aPin.length){
+                            return false;
+                        }else{
+                            this.counter++;
+                            return true;
+                        }
+                    }else{
+                        return false;
+                    }
+                }
+            },
+            scroll:function(parent,pin) {//发生滚动事件后，调用此方法
+                if(this.checkscroll()){
+                    console.log(parent);
+                    this.loadimg(this.cur,this.cur+this.limit);//每次需要新载入的图片
+                }
+            },
+            getScrollTop :function() {
+                var scrollTop = 0;
+                if (document.documentElement && document.documentElement.scrollTop) {
+                    scrollTop = document.documentElement.scrollTop;
+                } else if (document.body) {
+                    scrollTop = document.body.scrollTop;
+                }
+                return scrollTop;
+            }
+        };
+
+//------------------------正文--------------------------
+        //1.初始化
+        WATERFALL.init('#imgList','.pin');
+
+        //2.滚屏加载
+        $(window).scroll(function() {
+            WATERFALL.scroll('#imgList','.pin');
+        });
+    });
+</script>

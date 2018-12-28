@@ -66,7 +66,14 @@
             loadimg:function(_start,_end) {
                 if(_end > $(this.aPin).length){_end = $(this.aPin).length;}//去掉超出总数的不合理数据
                 this.cur = _end;
-                for(var i=_start;i<_end;i++){
+                for(var i=_start;i<_end;i++){   $('#btn').click(function (e) {
+            console.log(e);
+            $('#tip').css({display:'block'})
+        });
+
+        $('.close').click(function (e) {
+            $('#tip').css({display:'none'})
+       
                     var _aPin = $(this.aPin).eq(i);
                     var _img = _aPin.find("img");
                     _img.attr("src",_img.attr("data-src"));
@@ -95,7 +102,14 @@
                     var _aPin = $(this.aPin).eq(i);
                     if(_aPin.hasClass("hide")==false){//判断是否该容器的图片已载入
                         var _sumH = _aPin.position().top + _aPin.height();//当前容器相对于父元素的偏移 + 当前元素高（为下一次循环准备数据）
-                        //_aPin.attr("data-sum1",_sumH1);
+                        //_aPin.attr("data-sum   $('#btn').click(function (e) {
+            console.log(e);
+            $('#tip').css({display:'block'})
+        });
+
+        $('.close').click(function (e) {
+            $('#tip').css({display:'none'})
+       1",_sumH1);
                         //_aPin.attr("data-sum2",_sumH2);
                         //_aPin.attr("data-h",_aPin.height());
                         if(i==0){

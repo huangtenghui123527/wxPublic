@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大浪汽车站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=2.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font/iconfont.css">
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <div id="payPhone">
+        <div class="hearder"><i class="iconfont icon-tubiaozhizuo- goto"></i><span>扫码支付</span></div>
+        <div class="content">
+            <div class="title"><i class="iconfont icon-tubiao201 address"></i><span>大浪洗车站</span></div>
+            <ul class="payList">
+                <li><div>支付金额</div><div>9.9元</div></li>
+                <li class="wayTitle">支付方式</li>
+                <li>
+                    <div class="payWay">
+                        <!--<img src="./img/wxPay.png" alt="wxPay"/>-->
+                        <i class="iconfont icon-weixinzhifu wxPay"></i>
+                        <span>微信支付</span>
+                    </div>
+                    <div class="select" onclick="touchSelect(0)"><i class="iconfont icon-selected-copy selectCopy" id="wx"></i></div>
+                </li>
+                <li>
+                    <div class="payWay">
+                        <!--<img src="./img/zfbPay.png" alt="zfbPay"/>-->
+                        <i class="iconfont icon-z-alipay zfbPay"></i>
+                        <span>支付宝支付</span>
+                    </div>
+                    <div class="select"  onclick="touchSelect(1)"><i class="iconfont icon-selected-copy  currentSelect selectCopy" id="zfb"></i></div>
+                </li>
+            </ul>
+            <div class="btn" onclick="submitPay()"><span>确认支付</span></div>
+            <div style="display:none;" id="xttblog"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var value=1;
+    function touchSelect(val) {
+        // alert(val);
+        if (val){
+            $('#zfb').addClass('currentSelect')
+            $('#wx').removeClass('currentSelect')
+        }else{
+            $('#wx').addClass('currentSelect');
+            $('#zfb').removeClass('currentSelect')
+        }
+        value=val
+    }
+    function submitPay() {
+        // alert(value);
+        document.getElementById('xttblog').innerHTML='<iframe src="xttblog://taoge/open"></iframe>';
+    }
+</script>

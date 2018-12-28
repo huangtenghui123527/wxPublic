@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin:0;
+            position: relative;
+
+        }
+
+        #treeList{
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            position: absolute;
+        }
+        #treeList .tree,.ulTree{
+            width: 200px;
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #treeList .tree .tag{
+            padding: 10px 20px;
+            border: 1px solid black;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .ulTree li:hover > .ulTree{
+            display: block !important;
+        }
+        
+        .other{
+            width: 800px;
+            height: 500px;
+            background: #eee;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="treeList">
+        <ul class="tree ulTree"  id="rootNode"></ul>
+    </div>
+    <div class="other"></div>
+</body>
+</html>
+<script>
+    var list=[{
+        id:'01',name:'super01',pid:null,
+    },{
+        id:'02',name:'super02',pid:null,
+    },{
+        id:'03',name:'super03',pid:'01',
+    },{
+        id:'04',name:'super04',pid:'01',
+    },{
+        id:'05',name:'super05',pid:'01',
+    },{
+        id:'06',name:'super06',pid:'02',
+    },{
+        id:'07',name:'super07',pid:'02',
+    },{
+        id:'08',name:'super08',pid:'03',
+    },{
+        id:'09',name:'super09',pid:'03',
+    },{
+        id:'10',name:'super10',pid:'04',
+    },{
+        id:'11',name:'super11',pid:'06',
+    },{
+        id:'12',name:'super12',pid:'06',
+    },{
+        id:'13',name:'super13',pid:'05',
+    },{
+        id:'14',name:'super14',pid:'05',
+    },{
+        id:'15',name:'super15',pid:'14',
+    },{
+        id:'16',name:'super16',pid:'14',
+    },{
+        id:'17',name:'super17',pid:'16',
+    },{
+        id:'18',name:'super18',pid:'01',
+    },{
+        id:'19',name:'super19',pid:'01',
+    },{
+        id:'20',name:'super20',pid:'01',
+    },{
+        id:'21',name:'super21',pid:'01',
+    },{
+        id:'22',name:'super22',pid:'01',
+    },{
+        id:'23',name:'super23',pid:'01',
+    },{
+        id:'24',name:'super24',pid:'01',
+    },{
+        id:'25',name:'super25',pid:'01',
+    },{
+        id:'26',name:'super26',pid:'01',
+    },{
+        id:'27',name:'super27',pid:'05',
+    },{
+        id:'28',name:'super28',pid:'05',
+    },{
+        id:'29',name:'super29',pid:'05',
+    },{
+        id:'30',name:'super30',pid:'05',
+    },{
+        id:'31',name:'super31',pid:'05',
+    },{
+        id:'32',name:'super32',pid:'05',
+    },{
+        id:'33',name:'super33',pid:'05',
+    },{
+        id:'34',name:'super34',pid:'05',
+    },{
+        id:'35',name:'super35',pid:'05',
+    },{
+        id:'36',name:'super36',pid:'05',
+    },{
+        id:'37',name:'super37',pid:'05',
+    },{
+        id:'38',name:'super38',pid:'05',
+    },{
+        id:'39',name:'super39',pid:'05',
+    },{
+        id:'40',name:'super40',pid:'05',
+    },];
+    var meuns={
+        init:function () {
+            this.load();
+            // this.creatMeuns();
+        },
+        /**
+         * load:初始化加载数据
+         *
+         * */
+        load:function(){
+            var _this=this;
+            for(var i=0;i<list.length;i++){
+                if(!list[i].pid){
+                    var dom='<li class="tag" id="'+list[i].id+'">'+list[i].name+'</li>';
+                    $(dom).appendTo('#treeList .tree');
+                    _this.creatMeuns(list[i].id);
+                }
+            }
+
+            $('#rootNode .ulTree').css('display','none');
+        },
+        /**
+         * creatMeuns：创建子菜单
+         * @ID
+         * */
+        creatMeuns:function(id) {
+            var eleAttr = searchEle(id);
+            var currentLiTop = $('#' + id).position().top;
+            var currentLiLeft = $('#' + id).position().left + $('#' + id).width() + 42;
+            if (eleAttr.length) {
+                if (!$('#' + eleAttr[0].id).length) {
+                    $('<ul class="ulTree" style="position:absolute;top:' + currentLiTop + 'px;left:' + currentLiLeft + 'px"></ul>').appendTo('#' + id)
+                    for (var item of eleAttr) {
+                        var dom = '<li class="tag" id="' + item.id + '">' + item.name + '</li>';
+                        $(dom).appendTo('#' + id + '>ul')
+                        this.creatMeuns(item.id);
+                    }
+                } else {
+                    $('#' + id).parent().find('ul').hide()
+                    $('#' + eleAttr[0].id).parent().show();
+                }
+            }
+        }
+    }
+
+    meuns.init();
+
+
+    /**
+     * searchEle:根据所传ID查询其子元素数据
+     * **/
+    function searchEle(id) {
+        var attr=[];
+            for(var i in list){
+                if(list[i].pid==id){
+                    attr.push(list[i]);
+                }
+            };
+        return attr;
+    }
+
+</script>

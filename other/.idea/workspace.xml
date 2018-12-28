@@ -2,11 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="476d4554-5bf6-4cdb-bd9c-f97e55f3f329" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lightBox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tree/zTree/zTree_dome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../waterfall/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../waterfall/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../waterfall/otherFall.html" beforeDir="false" afterPath="$PROJECT_DIR$/../waterfall/otherFall.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../waterfall/phonewaterFall.html" beforeDir="false" afterPath="$PROJECT_DIR$/../waterfall/phonewaterFall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tree/zTree/zTree_dome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/.idea/waterfall.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/img/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/img/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/img/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/img/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/img/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/img/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/img/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/img/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/jquery-1.7.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/otherFall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/phonewaterFall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/statsWaterFall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../waterfall/waterfall.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,11 +58,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="4097" />
+          <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4097" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
     </session>
@@ -55,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-103">
-              <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+            <state relative-caret-position="183">
+              <caret line="224" column="5" lean-forward="true" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#3640#3647#1" expanded="true" />
@@ -126,7 +145,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="40" />
     <option name="y" value="156" />
     <option name="width" value="1565" />
@@ -184,15 +203,23 @@
       <updated>1544432677211</updated>
       <workItem from="1544432678548" duration="25418000" />
       <workItem from="1545117963008" duration="401000" />
-      <workItem from="1545959644496" duration="13199000" />
+      <workItem from="1545959644496" duration="13899000" />
     </task>
+    <task id="LOCAL-00001" summary="弹窗调试">
+      <created>1545987857054</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545987857054</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39018000" />
+    <option name="totallyTimeSpent" value="39718000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="156" width="1565" height="728" extended-state="0" />
+    <frame x="40" y="156" width="1565" height="728" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12589228" />
@@ -220,6 +247,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="弹窗调试" />
+    <option name="LAST_COMMIT_MESSAGE" value="弹窗调试" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lightBox.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -243,8 +274,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+        <state relative-caret-position="183">
+          <caret line="224" column="5" lean-forward="true" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#3640#3647#1" expanded="true" />

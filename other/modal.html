@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin:0;
+            position: relative;
+        }
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,.2);
+        }
+        /* 弹窗内容 */
+        .modal-content-public {
+            position: relative;
+            background-color: #fefefe;
+            padding: 0;
+            border: 1px solid #888;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        .modal-content01{
+            margin: auto;
+            width: 50%;
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+        .modal-content02{
+            animation: mymove 1s;
+            animation-fill-mode: forwards;
+        }
+        .modal-content03{
+            animation: mymove03 1s;
+            animation-fill-mode: forwards;
+        }
+        .modal-close{
+            animation: moveClose 1s;
+            animation-fill-mode: forwards;
+        }
+        /* 添加动画 */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+        @keyframes mymove {
+            from{
+                top: 0;
+                left: -200px;
+                width: 200px;
+                height: 200px;
+            }
+            to{
+                top: 5%;
+                left: 10%;
+                width: 80%;
+                height: 80%;
+
+            }
+        }
+        @keyframes mymove03 {
+            from{
+                top: 100%;
+                left: 0;
+                width: 0;
+                height: 0;
+            }
+            to{
+                top: 5%;
+                left: 10%;
+                width: 80%;
+                height: 80%;
+            }
+        }
+        @keyframes moveClose {
+            from{
+                bottom: 5%;
+                left: 10%;
+                width: 80%;
+                height: 80%;
+
+            }
+            to{
+                bottom: -100%;
+                left: -100%;
+                width: 0;
+                height: 0;
+            }
+        }
+        /* 关闭按钮 */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f40;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #666;
+            color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #666;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<!-- 打开弹窗按钮 -->
+<button class="myBtn">打开弹窗top</button>
+
+<button  class="myBtn">打开弹窗left</button>
+
+<button  class="myBtn">打开弹窗bottom</button>
+<!-- 弹窗 -->
+<div class="modal" style="padding-top: 150px;">
+    <!-- 弹窗内容 -->
+    <div class="modal-content-public modal-content01">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>弹窗头部</h2>
+        </div>
+        <div class="modal-body">
+            <p>弹窗文本...</p>
+            <p>弹窗文本...</p>
+        </div>
+        <div class="modal-footer">
+            <h3>弹窗底部</h3>
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <!-- 弹窗内容 -->
+    <div class="modal-content-public modal-content02">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>弹窗头部</h2>
+        </div>
+        <div class="modal-body">
+            <p>弹窗文本...</p>
+            <p>弹窗文本...</p>
+        </div>
+        <div class="modal-footer">
+            <h3>弹窗底部</h3>
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <!-- 弹窗内容 -->
+    <div class="modal-content-public modal-content03">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>弹窗头部</h2>
+        </div>
+        <div class="modal-body">
+            <p>弹窗文本...</p>
+            <p>弹窗文本...</p>
+        </div>
+        <div class="modal-footer">
+            <h3>弹窗底部</h3>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    // 获取弹窗
+    var modal=document.getElementsByClassName('modal');
+    // 打开弹窗的按钮对象
+    var btn = document.getElementsByClassName("myBtn");
+    for (var i=0;i<btn.length;i++){
+        (function (i) {
+            btn[i].onclick=function (e) {
+                var ele=e.target||e.srcElement;
+                modal[i].style.display='block';
+                modal[i].children[0].className='modal-content-public modal-content0'+(i+1)
+            }
+        })(i)
+    }
+    // 获取 <span> 元素，用于关闭弹窗 that closes the modal
+    var span = document.getElementsByClassName("close");
+
+    // 点击 <span> (x), 关闭弹窗
+    for (var i in span){
+        span[i].onclick = function(e) {
+            var ele=e.target||e.srcElement;
+            var parentEle=ele.parentNode.parentNode
+            parentEle.className='modal-content-public'
+            parentEle.classList.add('modal-close');
+            var time=setTimeout(function () {
+                parentEle.parentNode.style.display='none';
+                clearTimeout(time)
+            },800)
+        }
+    }
+
+    // 在用户点击其他地方时，关闭弹窗
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>

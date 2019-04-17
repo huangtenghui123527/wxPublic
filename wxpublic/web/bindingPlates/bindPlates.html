@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>小猫洗车</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="../../static/css/base.css">
+    <link rel="stylesheet" href="./css/softkeys.css">
+    <link rel="stylesheet" href="./css/bindPlates.css">
+</head>
+<body>
+<div class="header">绑定车牌</div>
+<div id="con" >
+    <div class="item_content" >
+        <div class=" mt50">
+            <h4 id="tcar">请输入车牌号</h4>
+            <form class=" form">
+                <div class=" form-group" style=" padding: 0 8px;">
+                    <input type="text" name="code"   class="form-control  carN1"
+                           maxlength="1" value="粤"  readonly />
+                    <input type="text" name="num1" class="form-control  carN "
+                           maxlength="1"   value="B" readonly/>
+                    <input type="text" name="num2" class="form-control  carN"
+                           maxlength="1"  readonly />
+                    <input type="text" name="num3" class="form-control  carN"
+                           maxlength="1" readonly />
+                    <input type="text" name="num4" class="form-control  carN"
+                           maxlength="1" readonly />
+                    <input type="text" name="num5" class="form-control  carN"
+                           maxlength="1" readonly />
+                    <input type="text" name="num6" class="form-control  carN"
+                           maxlength="1" readonly />
+                    <input type="text" name="num7" class="form-control  carN"
+                           maxlength="1" placeholder="+" readonly />
+                </div>
+                <div class="softkeys" data-target="input[name='code']" style="display:none;"></div>
+                <div class="carNum n1" data-target="input[name='num1']" style="display:none;"></div>
+                <div class="carNum n2" data-target="input[name='num2']" style="display:none;"></div>
+                <div class="carNum n3" data-target="input[name='num3']" style="display:none;"></div>
+                <div class="carNum n4" data-target="input[name='num4']" style="display:none;"></div>
+                <div class="carNum n5" data-target="input[name='num5']" style="display:none;"></div>
+                <div class="carNum n6" data-target="input[name='num6']" style="display:none;"></div>
+                <div class="carNum n7" data-target="input[name='num7']" style="display:none;"></div>
+            </form>
+        </div>
+        <div class="car_type"><span class="small_car">小型车辆(蓝牌)</span><img class="check_car" src="../../static/img/bindPlates/check@2x.png" alt=""></div>
+        <div class="car_type1"><span class="big_car">大型车辆(黄牌)</span><img class="uncheck_car" src="../../static/img/bindPlates/uncheck@2x.png" alt=""></div>
+        <input type="submit" value="绑定" class="sure-btn check" onclick="sendAdd()">
+        <div class="show_plate">
+            <div style="background: #fff;">
+                <p class="plate_box"><span class="plate_sign"></span><span id="chkc1" class="car"></span><span id="cartype1"></span><span class="close_p"   onclick="sendDelete(this)"></span></p>
+                <p class="plate_box"><span class="plate_sign"></span><span id="chkc2" class="car"></span><span id="cartype2"></span><span class="close_p"  onclick="sendDelete(this)"></span></p>
+                <p class="plate_box"><span class="plate_sign"></span><span id="chkc3" class="car"></span><span id="cartype3"></span><span class="close_p"  onclick="sendDelete(this)"></span></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<input type="hidden" id="smallid" value="">
+<input type="hidden" id="openid" value="">
+
+<script src="../../static/js/jquery.min.js"></script>
+<script src="../../static/js/bootstrap.min.js"></script>
+<script src="../../static/js/softkeys.js"></script>
+<script src="../../static/js/md5.js"></script>
+<script src="../../static/js/common.js"></script>
+<script src="./js/bindPlates.js"></script>
+</body>
+</html>

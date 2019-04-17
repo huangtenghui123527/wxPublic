@@ -1,0 +1,67 @@
+*{
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+input {
+    -webkit-user-select:auto;
+}
+body{
+    background: #f5f5f5 !important;
+}
+.re_money{
+    width: 90%;
+    margin: 5% auto;
+    background-color: #fff;
+    height: 132px;
+    border: 1px solid #e3e3e3;
+    font-size: 16px;
+}
+.re_money input{
+    box-shadow:none;
+    text-align: left;
+    font-size: 16px;
+    text-indent: 12px;
+}
+.re_money p{
+    border-top: 1px solid #e3e3e3;
+    padding: 10px 0;
+    text-indent: 12px;
+}
+.select_money {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 4%;
+}
+.select_money p{
+    background-color: #fff;
+    width: 31%;
+    height: 66px;
+    line-height: 66px;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+    margin: 1%;
+}
+.sure-btn{
+    margin: 0 auto;
+    width:90%;
+    padding: 10px;
+    background: #EA5503;
+    color:#fff;
+    font-size: 18px;
+    border: 1px solid #EA5503;
+    border-radius: 3px;
+}
+.check{
+    border-radius: 5px;
+    margin: 30px auto;
+    padding: 1px;
+}
+.select_money .mon_active{
+    border:1px solid #EA5503;
+    color: #EA5503;
+}

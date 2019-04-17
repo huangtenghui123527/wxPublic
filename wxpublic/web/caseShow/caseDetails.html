@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>案例展示</title>
+    <script type="text/javascript" src="js/mobile.js"></script>
+    <link href="./css/caseShow.css" rel="stylesheet">
+    <script src="../../static/js/jquery.min.js"></script>
+</head>
+<body>
+<div class="detailContent">
+    <img class="detailImg" src="" alt="" />
+    <div class="casedetailBtn"><span> </span></div>
+    <div class="casedetailNav"></div>
+</div>
+<!--<script type="text/javascript" src="../static/JSON/anli.json"></script>-->
+<script type="text/javascript">
+    $(function(){
+        var type = html_name("type");
+        console.log(type);
+        var title =decodeURI(html_name("title")) ;
+        var dataArr = [] ;
+        $.getJSON('../../static/JSON/anli.json', function(data){
+            console.log(data);
+            dataArr = data[type];
+            console.log(dataArr)
+            for(var i = 0 ; i < dataArr.length ; i++){
+                if(dataArr[i].title ==  title) {
+                    $(".detailImg").attr("src",dataArr[i].anli_image1);
+                    $(".casedetailBtn span").text(dataArr[i].title);
+                    $(".casedetailNav").text(dataArr[i].content)
+                }
+            }
+        });
+
+    })
+    function html_name(name){
+        html=window.location.search;
+        arr_html=html.split("?");
+        if(arr_html.length>1){
+            arr_html=arr_html[1].split("&");
+            for(i=0;i<arr_html.length;i++){
+                arr_b=arr_html[i].split("=");
+                if(arr_b[0]==name){
+                    return arr_b['1'];
+                    break;
+                }
+            }
+            return '';
+        }
+        else
+            return '';
+    }
+</script>
+</body>
+</html>

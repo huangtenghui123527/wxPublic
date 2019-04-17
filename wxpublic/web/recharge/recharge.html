@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0,user-scalable=no '>
+    <title>小猫洗车</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="../../static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="./css/recharge.css">
+</head>
+<body>
+<div class="header">充值</div>
+<div class="re_money">
+    <input type='number' placeholder="充值金额" autocomplete="off" id="money" />
+</div>
+<div class="select_money">
+    <p onclick="inputMoney(this)" class="mon_active">50元</p>
+    <p onclick="inputMoney(this)">100元</p>
+    <p onclick="inputMoney(this)">200元</p>
+    <p onclick="inputMoney(this)">500元</p>
+    <p onclick="inputMoney(this)" >1000元</p>
+    <p onclick="inputMoney(this)">其他金额</p>
+</div>
+<div style="text-align: center">
+    <input type="submit" value="充  值" class="sure-btn check" onclick="sureSubmit()">
+</div>
+<input type="hidden" id="openid" value="">
+<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/js/md5.js"></script>
+<script type="text/javascript" src="../../static/js/common.js"></script>
+<script type="text/javascript" src="./recharge.js"></script>
+</body>
+</html>

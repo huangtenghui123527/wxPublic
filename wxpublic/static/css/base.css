@@ -1,0 +1,401 @@
+/*body {*/
+    /*background-color: #FCF1DD ;*/
+    /*text-decoration: none;*/
+    /*-webkit-margin-top: 0;*/
+    /*font-family:PingFang-SC-Medium;*/
+/*}*/
+*{
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+html,body,head,div,p,a{margin: 0;padding: 0;}
+.body-bg{background-color: #dff1f4;height: 100%}
+.main{width: 100%;overflow: hidden;height: 50%;margin: 50px auto;}
+.title{font-size: 14px;font-weight: bold;margin: 254px 0 0 60px;color: #d3d3d3;}
+
+input,textarea{
+    -webkit-user-select:auto;
+}
+header {
+    text-align: center;
+    background-image:url(../img/title.png);
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    font-size: 18px;
+    color: white;
+}
+.header{
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    font-size: 18px;
+    color: white;
+    background: #EA5503;
+}
+button{
+    height: 50px;
+    line-height: 50px;
+    border: 0;
+    font-size: 24px;
+    outline: none;
+    box-shadow:3px 3px 3px #ccc;
+    text-align: center;
+    border-radius: 8px;
+    -webkit-border-radius: 12px;
+    color: #fff;
+    background: #ea5c2d;
+}
+input{
+    height: 44px;
+    line-height: 40px;
+    border: 0;
+    font-size: 22px;
+    outline: none;
+    box-shadow:3px 3px 3px #ebebeb;
+    border-radius: 8px;
+    text-align: center;
+    background: #FFF;
+}
+.textFont{
+    color:#000000;
+    font-size: 40px;
+}
+
+.area {
+    border: 0;
+    width: 100%;
+    position: relative;
+    height: 100px;
+}
+
+.area:first-child {
+    margin-top: 60px;
+}
+.item_title {
+    float: left;
+    border: 0 solid blue;
+    width: 17%;
+    height: 100%;
+    padding-top: 10px;
+    padding-right: 0;
+    text-align: right;
+    font-size: 16px;
+    color: #746A67;
+    font-weight: bolder;
+}
+.item_con {
+    float: left;
+    border: none;
+    width: 83%;
+    padding-left: 10px;
+    height: 100%;
+}
+
+/*paypark.ejs css start*/
+.softkeys li[data-type='åˆ é™¤']{
+    color: #00639E;
+}
+.carNum li[data-type='åˆ é™¤']{
+    color: #00639E;
+}
+.carN,.carN1{
+    width:12.2%;
+    float: left;
+}
+.item_content {
+    float: left;
+    height: 100%;
+    width:100%;
+    margin:4% 0;
+    padding:0;
+    text-align: center;
+}
+.item_content h4 {
+    color: #b7b7b7;
+}
+#prop_carNumber {
+    color:#ee504d;
+}
+.sure-btn {
+    width:40%;
+    max-width:300px;
+    margin-top:8%;
+    background: #EA5C2D;
+    color:#FFFFFF;
+    font-size: 18px;
+}
+.submit-btn {
+    width:40%;
+    max-width:300px;
+    margin-top:2%;
+    background: #eaccac;
+    color:#FFFFFF;
+    font-size: 18px;
+}
+.download {width:100%;height:auto;margin: 5% 0;padding: 0;text-align: center;}
+.download a {display: block;width: 60%;margin:3% auto;}
+.download a img{width: 100%;}
+.blue {color: #0044cc;}
+/*paypark.ejs css end*/
+
+/*payparkinfo.ejs css start*/
+.user-info{
+    /*float: left;*/
+    /*height: auto;*/
+    /*margin: 8% 3% 2% 3%;*/
+    /*padding: 0 2%;*/
+    /*padding-top: 10px;*/
+    /*font-size: 17px;*/
+    /*border-radius: 6px;*/
+    /*box-shadow:0 0 10px #A5A5AD;*/
+    /*color:#606060;*/
+    /*background-color:#FCF1DD;*/
+    /*text-align: left;*/
+    float: left;
+    height: auto;
+    font-size: 16px;
+    border-radius: 6px;
+    text-align: left;
+    padding:4%;
+}
+.user-info span{
+    float: left;
+    border-bottom: 1px solid #e3e3e3;
+    line-height: 50px;
+}
+.info-l{
+    width: 34%;
+    color: #b7b7b7;
+}
+.info-r{
+    width: 66%;
+    text-align: right;
+}
+.success-info {
+    width: 100%;
+    text-align: center;
+    clear: both;
+    height: 105px;
+    padding-top: 22px;
+}
+.success-info h4 {
+    display: block;
+    padding-bottom: 10px;
+    color: #EA4A55;
+}
+.success-info h5 {
+    display: block;
+    color: #4F4F4F;
+}
+#showloadingDialog{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #a9a9a9;
+    filter:alpha(opacity=50);
+    opacity:0.5;
+}
+#showloadingDialog span{
+    position: relative;
+    display: block;
+    z-index: 99;
+    color: #000;
+    top: 35%;
+    left: 50%;
+}
+.circle{
+    width:80px;
+    height:80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    text-align: center;
+    background:url('../img/loaderc.gif') no-repeat center;
+}
+.dialog{
+    width:80px;
+    height:20px;
+    margin-left: -40px;
+    margin-top: -10px;
+    text-align: center;
+}
+.download-guide {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+.download-guide label a{
+    text-decoration: none;
+    color: #EA5C2D;
+}
+/*payparkinfo.ejs css end*/
+.recharge_prop_phone {
+    font-size: 18px;
+    display: none;
+    margin: 2% 6%;
+}
+.recharge_getmoney{
+    width: 100%;
+    height: 100px;
+    font-size: 20px;
+    background-color: #ffffff;
+    color: black;
+}
+.recharge_btn_tal{
+    border: 1px solid white;
+    margin:0 auto;
+    text-align: center;
+    width: 98%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 35px;
+    height: 70px;
+    font-size: 20px;
+    background-color: #f9b552;
+    color: white;
+}
+.recharge_btn_tal td{
+    width: 20%;
+}
+.recharge_btn_tal td:hover{
+    background-color:blue;
+
+}
+.outcenter{
+    text-align: center;
+}
+.inputText{
+    width: 55%;
+    position: relative;
+
+}
+.input_button_code {
+    color: #FFFDEB;
+    background-color: #FEC961;
+    width: 30%;
+    margin-left: 5px;
+    font-size: 15px;
+    position: relative;
+}
+.delete_btn {
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    position: relative;
+    top: -5px;
+}
+
+.cusbutton {
+    background-color: #ea5521;
+    border: none;
+}
+.cusbutton:active {
+    background-color: #c53d0e;
+    border: 0;
+}
+.cusbutton:onClick {
+    background-color: #c53d0e;
+    border: 0;
+}
+
+.rechinfo {
+    margin: 2% 3%;
+}
+.lookup_content_select {
+    border: 0 solid red;
+    width: 100%;
+    height: 80px;
+    background-color: #F5E4C6;
+}
+.lookup_content_select div {
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+.lookup_content_select h4 {
+    margin-top: 0;
+}
+.lookup_content_select img {
+    width: 35%;
+    height: 70%;
+}
+.lookup_select_selected {
+    background-color: #775414;
+    border-bottom: 2px solid #775414;
+    color: #FFF;
+}
+.lookup_select_unselected {
+    background-color: #F5E4C6;
+    border-bottom: 2px solid #B9AE9A;
+    color: #746A67;
+}
+.select_s{
+    color:#00AEFF;border: none;
+    background-color: white;
+    width:18%;
+    height:40px;
+    line-height:40px;
+    font-size: 20px;
+    border-radius: 5px 5px 5px;
+    box-shadow:5px 5px 5px #ebebeb;
+}
+.text_l{
+    text-align: left;width:50% !important;
+}
+
+#alert{
+    background: #000;
+    opacity: 0.75; /*é€æ˜Žåº¦ï¼Œ1ä¸é€æ˜Žï¼Œ0é€æ˜Ž*/
+    filter: alpha(opacity=75); /*é€æ˜Žåº¦å…¼å®¹IEæµè§ˆå™¨ï¼Œ100ä¸é€æ˜Ž*/
+    height: 1000px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+#square{
+    font-size: 16px;
+    position: fixed;
+    left: 30%;
+    top: 30%;
+    z-index: 1001;
+    background: #fff;
+    width: 80%;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+.sTitle{
+    text-align: center;
+    /*font-size: 14px;*/
+}
+
+.sContent{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#sBtn{
+    float: right;
+    margin-top: 20px;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    color: #04BE02;
+    text-align: center;
+}
+
+#line{
+    margin: 20px -20px 0 -20px;
+    height: 1px;
+    border-bottom: 1px solid #eee;
+}

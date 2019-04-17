@@ -1,0 +1,115 @@
+/*清除浮动*/
+.fl{float: left;}
+.fr{float: right;}
+.clearfix:before,.clearfix:after{content: '';display: table;}
+.clearfix:after{clear: both;}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*caseShow.css*/
+.bigContent{
+    padding: 32px 24px;
+}
+.caseBox .caseBoxList {
+    background: #FFFFFF;
+    width: 48%;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    padding-bottom: 24px;
+}
+.caseBox .caseBoxList img{
+    width: 100%;
+    margin-bottom: 24px;
+}
+.caseBox .caseBoxList div {
+    text-align: center;
+}
+.caseBox .caseBoxList div span:nth-child(1) {
+    font-size: 34px;
+    font-weight: bold;
+    color: #333333;
+}
+.caseBox .caseBoxList div span:nth-child(2) {
+    font-size: 24px;
+    color: #999999;
+}
+.caseimgbox {
+    text-align: center;
+    margin-top: 64px;
+}
+/*caseShowList.css*/
+.caseList2Box .titleList {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background: #FFFFFF;
+}
+.commontitle {
+    width: 25%;
+    text-align: center;
+    font-size: 28px;
+    color: #999999;
+    position: relative;
+}
+.currentDiv {
+    font-size: 28px;
+    color: #f98842;
+}
+.currentDiv::before {
+    content: " ";
+    display: inline-block;
+    width: 60px;
+    height: 4px;
+    background: #f98842;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.syzhBox,.shggBox,.xzlBox,.zzlBox {
+    display: none;
+    padding: 24px;
+}
+.commonList .syzhList {
+    width: 48%;
+    margin-bottom: 24px;
+    background: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding-bottom: 16px;
+    overflow: hidden;
+}
+.commonList .syzhList img {
+    width: 100%;
+    margin-bottom: 16px;
+}
+.commonList .syzhList span {
+    font-size: 28px;
+    color: #333333;
+}
+.detailContent img {
+    width: 100%;
+}
+.detailContent .casedetailBtn {
+    text-align: center;
+}
+.detailContent .casedetailBtn span {
+    display: inline-block;
+    width: 570px;
+    height: 80px;
+    line-height: 80px;
+    background: #ff971d;
+    border-radius: 8px;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin: 32px 0 24px;
+}
+.detailContent .casedetailNav {
+    font-size: 28px;
+    color: #333333;
+    line-height: 40px;
+    padding: 0 40px;
+    letter-spacing: 2px;
+}

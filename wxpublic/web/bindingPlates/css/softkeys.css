@@ -1,0 +1,259 @@
+/**
+ * CONTENTS
+ *
+ * BASE
+ *
+ * BUTTON TYPES
+ *
+ * MODIFIERS
+ * Size
+ * Mode
+ */
+
+/*------------------------------------*\
+    BASE
+\*------------------------------------*/
+
+.softkeys,.carNum {
+    display: table;
+    list-style: none;
+    position: absolute;
+    bottom:0;
+    padding: 0;
+    width: 100%;
+    height:255px;
+    text-align: center;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    background-color: #d1d4d9;
+}
+
+
+.softkeys__btn {
+    box-shadow: 1px 1px 0 #444;
+    -moz-box-shadow: 1px 1px 0 #444;
+    -webkit-box-shadow: 1px 1px 0 #444;
+    display: inline-block;
+    text-align: center;
+    font-size:1.5rem;
+    line-height: 32px;
+    min-width: 9%;
+    padding: 1.5% 0;
+    margin: 1% 0.4%;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+}
+
+.softkeys__btn:hover, .softkeys__btn:focus {
+    outline: none;
+    background-color: #4b94ce;
+    border-color: #4b94ce;
+    color: #fff;
+}
+
+.softkeys__btn span {
+    display: none;
+}
+.softkeys__btn span:first-child {
+    display: block;
+}
+
+
+.softkeys__new-row:before {
+    display: block;
+    content: ' ';
+    width: 100%;
+}
+
+
+
+
+
+/*------------------------------------*\
+    BUTTON TYPEs
+\*------------------------------------*/
+
+.softkeys__btn--space {
+    width: 30em;
+}
+
+
+
+
+
+/*------------------------------------*\
+    SIZE MODIFIERS
+\*------------------------------------*/
+
+.softkeys--sm { font-size: 0.8em; }
+.softkeys--md { font-size: 1em;   }
+.softkeys--lg { font-size: 1.2em; }
+.softkeys--xl { font-size: 1.4em; }
+
+
+
+
+
+/*------------------------------------*\
+    MODE MODIFIERS
+\*------------------------------------*/
+
+/*.softkeys--caps*/
+.softkeys--caps .softkeys__btn[data-type=capslock] {
+    background-color: #4b94ce;
+    border-color: #4b94ce;
+    color: #fff;
+}
+
+.softkeys--caps .softkeys__btn[data-type=letter] {
+    text-transform: uppercase;
+}
+
+/*.softkeys--alt*/
+
+.softkeys--alt .softkeys__btn[data-type=shift] {
+    background-color: #4b94ce;
+    border-color: #4b94ce;
+    color: #fff;
+}
+
+.softkeys--alt .softkeys__btn[data-type=symbol] span {
+    display: none;
+}
+
+.softkeys--alt .softkeys__btn[data-type=symbol] span:last-child {
+    display: block;
+}
+.softkeys li[data-type='del']{
+    right: 1%;
+    position: absolute;
+    color: #000;
+    background-color: #ddd;
+    width: 13%;
+}
+.carNum li[data-type='del']{
+    right: 1%;
+    position: absolute;
+    color: #000;
+    background-color: #ddd;
+    width: 13%;
+}
+.carN,.carN1{
+    width:10.7%;
+    margin-right: 2%;
+    float: left;
+    color: #fff;
+    box-sizing: border-box;
+}
+.softkeys, .carNum{
+    background: #ddd;
+    z-index: 1000;
+}
+.softkeys li, .carNum li{
+    box-sizing: border-box;
+}
+input:focus{
+    outline: none;
+    border-color:  #EA5503 !important ;
+}
+input.carN:nth-of-type(8){
+    margin-right: 0;
+}
+input::-webkit-input-placeholder{
+    color: #fff;
+}
+input:-moz-placeholder{
+    color:#fff;
+}
+¡¡¡¡input::-moz-placeholder{
+    color:#fff;
+}
+input:-ms-input-placeholder{
+    color:#fff;
+}
+.form-control{
+    background: #fff!important;
+    color: #000!important;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 0;
+    border: 1px solid #ddd;
+}
+#alert{
+    background: #000;
+    opacity: 0.75; /*Í¸Ã÷¶È£¬1²»Í¸Ã÷£¬0Í¸Ã÷*/
+    filter: alpha(opacity=75); /*Í¸Ã÷¶È¼æÈÝIEä¯ÀÀÆ÷£¬100²»Í¸Ã÷*/
+    height: 1000px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+#square{
+    font-size: 16px;
+    position: fixed;
+    left: 30%;
+    top: 30%;
+    z-index: 1001;
+    background: #fff;
+    width: 80%;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+.sTitle{
+    text-align: center;
+    /*font-size: 14px;*/
+}
+
+.sContent{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#sBtn{
+    float: right;
+    margin-top: 20px;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    color: #04BE02;
+    text-align: center;
+}
+
+#line{
+    margin: 20px -20px 0 -20px;
+    /*width: 100%;*/
+    height: 1px;
+    border-bottom: 1px solid #eee;
+}
+
+#sKnow{
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    color: #04BE02;
+    text-align: center;
+    float: left;
+}
+#cancel{
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    color: #777;
+    text-align: center;
+    float: left;
+}

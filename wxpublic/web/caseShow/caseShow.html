@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>案例展示</title>
+    <script type="text/javascript" src="./js/mobile.js"></script>
+    <link href="./css/caseShow.css" rel="stylesheet">
+    <script src="../../static/js/jquery.min.js"></script>
+</head>
+<body style="background-color:  #F3F3F3;">
+<div class="bigContent">
+    <div class="caseBox clearfix">
+        <div class="caseBoxList fl" onclick="jump(0);">
+            <img src="../../static/img/business/1.png" alt="" />
+            <div><span>商业综合体</span><br /><span>Commercial Complex</span></div>
+        </div>
+        <div class="caseBoxList fr" onclick="jump(1);">
+            <img src="../../static/img/public/3.png" alt="" />
+            <div><span>社会公共类</span><br /><span>Communal Facilities</span></div>
+        </div>
+        <div class="caseBoxList fl" onclick="jump(2);">
+            <img src="../../static/img/Offices/3.png" alt="" />
+            <div><span>写字楼</span><br /><span>Office Buildings</span></div>
+        </div>
+        <div class="caseBoxList fr" onclick="jump(3);">
+            <img src="../../static/img/house/1.png" alt="" />
+            <div><span>住宅类</span><br /><span>Community</span></div>
+        </div>
+    </div>
+    <!--<div class="caseimgbox">-->
+        <!--<img src="../static/images/productIntroduction/logo_2@2x.png" alt="" />-->
+    <!--</div>-->
+</div>
+<script type="text/javascript">
+    function jump(num) {
+        window.location.href = "caseList.html?num="+num;
+    }
+</script>
+</body>
+</html>

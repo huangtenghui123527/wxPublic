@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7c46d49e-63a2-4515-b625-8f11290c08d6" name="sever" url="http://192.168.100.92:8082/washWX/web">
+        <fileTransfer host="192.168.100.92/washWX/web" port="8082">
+          <option name="port" value="8082" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

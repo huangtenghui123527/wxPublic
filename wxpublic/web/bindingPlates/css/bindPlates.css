@@ -1,0 +1,137 @@
+
+#tcar {
+    padding: 0;
+    color: #b7b7b7;
+    font-size: 16px;
+}
+
+.mt50 {
+    /*background: #fff;*/
+    height: 108px;
+    margin-top: -14px;
+    padding-top: 8px;
+}
+
+.item_content {
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+h5 {
+    /*color:#666666;*/
+    color: #FA7B34;
+    margin-bottom: 30px;
+}
+
+h5 span {
+    color: #fff;
+    font-size: 16px;
+}
+
+.sure-btn {
+    margin: 0 auto;
+    width: 90%;
+    padding: 10px;
+    background: #EA5503;
+    color: #fff;
+    font-size: 18px;
+    border: 1px solid #EA5503;
+    border-radius: 3px;
+}
+
+.check {
+    border-radius: 5px;
+    margin: 30px auto 10px auto;
+    padding: 1px;
+}
+
+.plate_box {
+    position: relative;
+}
+
+.plate_sign {
+    background: url("../../../static/img/bindPlates/plate_car.png") no-repeat;
+    background-size: 100% 100%;
+    width: 27px;
+    height: 20px;
+    position: absolute;
+}
+
+.close_p {
+    background: url(../../../static/img/bindPlates/clo.png) no-repeat;
+    background-size: 100% 100%;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 18px;
+    top: 22px;
+}
+
+#chkc1, #chkc2, #chkc3 {
+    margin-left: 36px;
+}
+
+.show_plate {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 2%;
+    display: none;
+}
+
+.plate_box {
+    margin-left: 10px;
+    padding: 18px 0;
+    cursor: pointer;
+}
+
+.show_plate span:last-child {
+    margin-left: 38px;
+}
+
+#square {
+    padding: 0;
+}
+
+#square .sTitle {
+    padding-top: 20px;
+}
+
+#square #line {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#sKnow, #cancel {
+    height: 50px;
+    line-height: 50px;
+}
+
+#sKnow {
+    border-left: 1px solid #eee;
+}
+
+#cartype1, #cartype2, #cartype3 {
+    margin-left: 15%;
+}
+
+.car_type, .car_type1 {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 40px;
+    color: #222222;
+}
+
+.small_car, .big_car {
+    float: left;
+    margin-left: 12px;
+}
+.check_car,.uncheck_car{
+    float: right;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
